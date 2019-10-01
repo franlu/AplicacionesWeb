@@ -5,7 +5,12 @@
     <title>Tablas en HTML</title>
   </head>
   <body>
-    <table border="1">
+    <table
+      border="1"
+      width="100%"
+      align="center"
+      bgcolor="lightblue">
+      <caption align="top">Título de la tabla</caption>
       <tr>
         <th>Encabezado Columna 1</th>
         <th>Encabezado Columna 2</th>
@@ -25,5 +30,25 @@
         <td>Fila 3 - Columna 2</td>
       </tr>
     </table>
+    <br>
+    <!-- Alineación de celdas -->
+    <table
+      border="1"
+      width="100%"
+      cellspacing="5"
+      cellpadding="10">
+      <caption>Alineación de celdas</caption>
+      <tr>
+        <td>F1C1</td>
+        <td>F1C2</td>
+        <td>F1C3</td>
+      </tr>
+      <tr height="50" align="left" valign="top">
+        <td>F2C1</td>
+        <td>F2C2</td>
+        <td>F2C3</td>
+      </tr>
+    </table>
+
   </body>
 </html>
