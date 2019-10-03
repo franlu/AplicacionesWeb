@@ -30,7 +30,9 @@
         <td>Fila 3 - Columna 2</td>
       </tr>
     </table>
+
     <br>
+
     <!-- Alineación de celdas -->
     <table
       border="1"
@@ -47,6 +49,40 @@
         <td>F2C1</td>
         <td>F2C2</td>
         <td>F2C3</td>
+      </tr>
+    </table>
+
+    <br>
+
+    <!-- Ejemplo con extensión de celdas -->
+    <table border="1" align="center" width="50%">
+      <caption>Ejemplo con extensión de celdas</caption>
+      <tr>
+        <td colspan="4">&nbsp;</td>
+        <!--
+        Desaparecen al usar la propiedad colspan
+        <td></td>
+        <td></td>
+        <td></td>
+        -->
+      </tr>
+      <tr>
+        <td rowspan="2" width="25%">&nbsp;</td>
+        <td width="25%">&nbsp;</td>
+        <td width="25%">&nbsp;</td>
+        <td width="25%">&nbsp;</td>
+      </tr>
+      <tr>
+        <!--
+        Desaparece por rowspan de la fila superior
+        <td></td>
+        -->
+        <td>&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <!--
+        Desaparece por colspan de la tercera columna
+        <td></td>
+        -->
       </tr>
     </table>
 
