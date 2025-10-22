@@ -9,8 +9,6 @@ sudo systemctl status apache2
 sudo systemctl status mysql
 ```
 
----
-
 ## 🗄️ 2. Crear base de datos y usuario para WordPress
 Entra en MySQL como root:
 ```bash
@@ -25,16 +23,12 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
----
-
 ## 🌐 3. Instalar dependencias necesarias
 Instala extensiones PHP necesarias para WordPress:
 ```bash
 sudo apt install php-mysql php-gd php-xml php-mbstring php-curl php-zip php-intl unzip
 sudo systemctl restart apache2
 ```
-
----
 
 ## 📦 4. Descargar WordPress
 Descarga y descomprime WordPress:
@@ -43,8 +37,6 @@ cd /tmp
 wget https://wordpress.org/latest.tar.gz
 tar -xzf latest.tar.gz
 ```
-
----
 
 ## 📁 5. Copiar WordPress al directorio web
 Copia los archivos al directorio de Apache:
@@ -55,8 +47,6 @@ sudo chown -R www-data:www-data /var/www/html/wordpress
 sudo find /var/www/html/wordpress -type d -exec chmod 755 {} \;
 sudo find /var/www/html/wordpress -type f -exec chmod 644 {} \;
 ```
-
----
 
 ## ⚙️ 6. Configurar WordPress
 Copia el archivo de configuración:
@@ -75,7 +65,6 @@ define( 'DB_HOST', 'localhost' );
 Genera claves de seguridad en:
 [https://api.wordpress.org/secret-key/1.1/salt/](https://api.wordpress.org/secret-key/1.1/salt/)
 
----
 
 ## 🌍 7. Configurar Apache para WordPress
 Crea un archivo de configuración:
@@ -104,8 +93,6 @@ sudo a2enmod rewrite
 sudo systemctl reload apache2
 ```
 
----
-
 ## 🚀 8. Instalar WordPress desde el navegador
 Abre tu navegador y visita:
 ```
@@ -113,15 +100,11 @@ http://localhost/wordpress
 ```
 Sigue el asistente de instalación (idioma, nombre del sitio, usuario, contraseña, correo).
 
----
-
 ## 🔒 9. Activar HTTPS con Let’s Encrypt (opcional)
 Instala y configura un certificado SSL gratuito:
 ```bash
 sudo apt install certbot python3-certbot-apache
 sudo certbot --apache
 ```
-
----
 
 ✅ ¡Listo! Tu entorno **LAMP + WordPress** estará funcionando correctamente en Debian 13.
