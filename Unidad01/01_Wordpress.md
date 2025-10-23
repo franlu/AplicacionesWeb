@@ -93,6 +93,8 @@ sudo a2enmod rewrite
 sudo systemctl reload apache2
 ```
 
+Guía de uso para `modulo rewrite`: [web](https://www.hostinger.com/es/tutoriales/como-configurar-mod_rewrite)
+
 ## 🚀 8. Instalar WordPress desde el navegador
 Abre tu navegador y visita:
 ```
