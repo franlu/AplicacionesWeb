@@ -29,4 +29,4 @@ Deberá crear y configurar varios usuarios con distintos niveles de acceso, simu
 - Ordenador con acceso a un servidor web local o remoto.  
 - Instalación funcional de WordPress.  
 - Navegador web actualizado.  
-- (Perfiles de usuario)[https://wordpress.com/es/support/roles-usuario/]
+- [Perfiles de usuario](https://wordpress.com/es/support/roles-usuario/)
