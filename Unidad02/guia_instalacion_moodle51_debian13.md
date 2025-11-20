@@ -30,7 +30,7 @@ EXIT;
 
 ```
 cd /var/www/
-sudo wget https://download.moodle.org/download.php/stable501/moodle-latest-501.tgz
+sudo wget https://download.moodle.org/download.php/direct/stable501/moodle-latest-501.tgz
 sudo tar -xvzf moodle-latest-501.tgz
 sudo mv moodle /var/www/moodle
 ```
