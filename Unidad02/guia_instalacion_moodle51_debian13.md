@@ -1,9 +1,11 @@
 # Guía de Instalación de Moodle 5.1 en Debian 13 (con LAMP previo)
 
 ## 1. Requisitos previos
+
 Asegúrate de tener instalado Apache, MariaDB/MySQL, PHP 8.2+ y las extensiones necesarias.
 
-### Extensiones PHP:
+### Extensiones PHP
+
 ```
 sudo apt update
 sudo apt install php-curl php-gd php-intl php-mbstring php-xml php-zip php-soap php-xmlrpc php-bcmath php-ldap
@@ -11,9 +13,11 @@ sudo systemctl restart apache2
 ```
 
 ## 2. Crear base de datos
+
 ```
 sudo mysql -u root -p
 ```
+
 ```
 CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'ContraseñaSegura123';
@@ -23,14 +27,16 @@ EXIT;
 ```
 
 ## 3. Descargar Moodle 5.1
+
 ```
 cd /var/www/
 sudo wget https://download.moodle.org/download.php/stable501/moodle-latest-501.tgz
-sudo tar -xvzf moodle-latest-51.tgz
+sudo tar -xvzf moodle-latest-501.tgz
 sudo mv moodle /var/www/moodle
 ```
 
 ## 4. Crear moodledata
+
 ```
 sudo mkdir /var/www/moodledata
 sudo chown -R www-data:www-data /var/www/moodledata
@@ -38,18 +44,22 @@ sudo chmod -R 755 /var/www/moodledata
 ```
 
 ## 5. Permisos
+
 ```
 sudo chown -R www-data:www-data /var/www/moodle
 sudo chmod -R 755 /var/www/moodle
 ```
 
 ## 6. Configuración de Apache
+
 Crear archivo:
+
 ```
 sudo nano /etc/apache2/sites-available/moodle.conf
 ```
 
 Contenido:
+
 ```
 <VirtualHost *:80>
     ServerName moodle.local
@@ -62,6 +72,7 @@ Contenido:
 ```
 
 Activar:
+
 ```
 sudo a2ensite moodle.conf
 sudo a2enmod rewrite
@@ -69,7 +80,9 @@ sudo systemctl reload apache2
 ```
 
 ## 7. Instalar vía navegador
+
 Accede a:
+
 ```
 http://moodle.local
 ```
@@ -77,10 +90,13 @@ http://moodle.local
 Sigue los pasos de configuración.
 
 ## 8. Ajustes PHP opcionales
+
 ```
 sudo nano /etc/php/8.2/apache2/php.ini
 ```
+
 Cambiar:
+
 ```
 max_execution_time = 300
 memory_limit = 512M
