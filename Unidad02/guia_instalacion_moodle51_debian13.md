@@ -63,7 +63,7 @@ Contenido:
 
 ```
 <VirtualHost *:80>
-    ServerName moodle.local
+    ServerName moodle.local # 127.0.0.1 o localhost
     DocumentRoot /var/www/moodle
     <Directory /var/www/moodle>
         AllowOverride All
@@ -85,7 +85,7 @@ sudo systemctl reload apache2
 Accede a:
 
 ```
-http://moodle.local
+http://moodle.local # 127.0.0.1 o localhost
 ```
 
 Sigue los pasos de configuración.
