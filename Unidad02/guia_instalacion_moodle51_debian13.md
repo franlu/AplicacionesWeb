@@ -25,7 +25,7 @@ EXIT;
 ## 3. Descargar Moodle 5.1
 ```
 cd /var/www/
-sudo wget https://download.moodle.org/download.php/direct/stable51/moodle-latest-51.tgz
+sudo wget https://download.moodle.org/download.php/stable501/moodle-latest-501.tgz
 sudo tar -xvzf moodle-latest-51.tgz
 sudo mv moodle /var/www/moodle
 ```
