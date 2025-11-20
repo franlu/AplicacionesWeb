@@ -32,15 +32,16 @@ EXIT;
 cd /var/www/
 sudo wget https://download.moodle.org/download.php/direct/stable501/moodle-latest-501.tgz
 sudo tar -xvzf moodle-latest-501.tgz
-sudo mv moodle /var/www/moodle
+sudo rm -r moodle-latest-501.tgz
 ```
 
 ## 4. Crear moodledata
 
 ```
-sudo mkdir /var/www/moodledata
-sudo chown -R www-data:www-data /var/www/moodledata
-sudo chmod -R 755 /var/www/moodledata
+cd /var/www/
+sudo mkdir moodledata
+sudo chown -R www-data:www-data moodledata
+sudo chmod -R 755 moodledata
 ```
 
 ## 5. Permisos
