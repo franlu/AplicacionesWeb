@@ -30,9 +30,9 @@ EXIT;
 
 ```
 cd /var/www/
-sudo wget https://download.moodle.org/download.php/direct/stable501/moodle-latest-501.tgz
-sudo tar -xvzf moodle-latest-501.tgz
-sudo rm -r moodle-latest-501.tgz
+sudo wget https://download.moodle.org/download.php/stable501/moodle-5.1.tgz
+sudo tar -xvzf moodle-5.1.tgz
+sudo rm -r moodle-5.1.tgz
 ```
 
 ## 4. Crear moodledata
