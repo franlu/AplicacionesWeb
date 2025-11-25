@@ -20,7 +20,7 @@ sudo mysql -u root -p
 
 ```
 CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'ContraseñaSegura123';
+CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'ClaveSegura';
 GRANT ALL PRIVILEGES ON moodle.* TO 'moodleuser'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
@@ -53,7 +53,7 @@ sudo chmod -R 755 /var/www/moodle
 
 ## 6. Configuración de Apache
 
-Crear archivo:
+Crear archivo de configuración:
 
 ```
 sudo nano /etc/apache2/sites-available/moodle.conf
@@ -67,6 +67,7 @@ Contenido:
     DocumentRoot /var/www/moodle
     <Directory /var/www/moodle>
         AllowOverride All
+        Options FollowSymLinks
         Require all granted
     </Directory>
 </VirtualHost>
@@ -76,7 +77,14 @@ Activar:
 
 ```
 sudo a2ensite moodle.conf
-sudo a2enmod rewrite
+sudo a2enmod rewrite #no es necesario ejecutarlo cada vez que se crea un sitio nuevo
+sudo systemctl reload apache2
+```
+
+Desactivar un sitio:
+
+```
+sudo a2dissite moodle.conf
 sudo systemctl reload apache2
 ```
 
@@ -93,7 +101,7 @@ Sigue los pasos de configuración.
 ## 8. Ajustes PHP opcionales
 
 ```
-sudo nano /etc/php/8.2/apache2/php.ini
+sudo nano /etc/php/8.4/apache2/php.ini
 ```
 
 Cambiar:
