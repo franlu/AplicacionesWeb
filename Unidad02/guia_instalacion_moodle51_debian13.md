@@ -4,6 +4,8 @@
 
 Asegúrate de tener instalado Apache, MariaDB/MySQL, PHP 8.2+ y las extensiones necesarias.
 
+:warning: Si estamos trabajando con una máquina virtual, ahora es el momento de realizar una instantanea o punto de restauración :warning:
+
 ### Extensiones PHP
 
 ```
