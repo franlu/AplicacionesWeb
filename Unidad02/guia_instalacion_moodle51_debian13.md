@@ -40,7 +40,7 @@ sudo rm -r moodle-5.1.tgz
 ## 4. Crear moodledata
 
 ```
-cd /var/www/
+cd /var/
 sudo mkdir moodledata
 sudo chown -R www-data:www-data moodledata
 sudo chmod -R 755 moodledata
@@ -65,9 +65,9 @@ Contenido:
 
 ```
 <VirtualHost *:80>
-    ServerName moodle.local # 127.0.0.1 o localhost
-    DocumentRoot /var/www/moodle
-    <Directory /var/www/moodle>
+    ServerName localhost # 127.0.0.1
+    DocumentRoot /var/www/moodle/public
+    <Directory /var/www/moodle/public>
         AllowOverride All
         Options FollowSymLinks
         Require all granted
@@ -90,17 +90,7 @@ sudo a2dissite moodle.conf
 sudo systemctl reload apache2
 ```
 
-## 7. Instalar vía navegador
-
-Accede a:
-
-```
-http://moodle.local # 127.0.0.1 o localhost
-```
-
-Sigue los pasos de configuración.
-
-## 8. Ajustes PHP opcionales
+## 7. Ajustes PHP
 
 ```
 sudo nano /etc/php/8.4/apache2/php.ini
@@ -109,10 +99,23 @@ sudo nano /etc/php/8.4/apache2/php.ini
 Cambiar:
 
 ```
+max_input_vars = 5000
 max_execution_time = 300
 memory_limit = 512M
 post_max_size = 256M
 upload_max_filesize = 256M
 ```
+
+## 8. Instalar vía navegador
+
+Accede a:
+
+```
+http://localhost
+```
+
+Sigue los pasos de configuración.
+
+
 
 ## 9. Instalación completa 🎉

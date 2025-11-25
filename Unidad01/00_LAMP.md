@@ -20,7 +20,11 @@ sudo apt install wget gnupg lsb-release -y
 
 ---
 
-## 🗂️ Paso 2: Añadir el repositorio oficial de MySQL
+## 🗂️ Paso 2: Instalar MariaDB
+
+:link: Guía de [instalación](https://www.rosehosting.com/blog/how-to-install-mariadb-on-debian-13/)
+
+## 🗂️ (*) Paso: Añadir el repositorio oficial de MySQL
 
 Descarga y añade la clave GPG del repositorio de MySQL:
 
@@ -41,9 +45,12 @@ Actualiza el índice de paquetes:
 sudo apt update
 ```
 
+:link: Guía de [instalación manual](https://wiki.crowncloud.net/?How_to_Install_MySQL_8_on_Debian_13=)
+
+
 ---
 
-## 💾 Paso 3: Instalar MySQL Server
+## 💾 (*) Paso: Instalar MySQL Server
 
 Instala el paquete principal de MySQL Server:
 
