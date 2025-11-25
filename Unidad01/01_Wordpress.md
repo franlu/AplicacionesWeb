@@ -95,6 +95,12 @@ sudo systemctl reload apache2
 
 Guía de uso para `modulo rewrite`: [web](https://www.hostinger.com/es/tutoriales/como-configurar-mod_rewrite)
 
+Ver log de errores de Apache en tiempo real
+
+```
+sudo tail -f /var/log/apache2/error.log
+```
+
 ## 🚀 8. Instalar WordPress desde el navegador
 Abre tu navegador y visita:
 ```

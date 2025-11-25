@@ -90,6 +90,12 @@ sudo a2dissite moodle.conf
 sudo systemctl reload apache2
 ```
 
+Ver log de errores de Apache en tiempo real
+
+```
+sudo tail -f /var/log/apache2/error.log
+```
+
 ## 7. Ajustes PHP
 
 ```
