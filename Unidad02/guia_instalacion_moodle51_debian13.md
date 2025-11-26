@@ -8,7 +8,7 @@ Asegúrate de tener instalado Apache, MariaDB/MySQL, PHP 8.2+ y las extensiones 
 
 ### Extensiones PHP
 
-```
+```bash
 sudo apt update
 sudo apt install php-curl php-gd php-intl php-mbstring php-xml php-zip php-soap php-xmlrpc php-bcmath php-ldap
 sudo systemctl restart apache2
@@ -16,11 +16,11 @@ sudo systemctl restart apache2
 
 ## 2. Crear base de datos
 
-```
+```bash
 sudo mysql -u root -p
 ```
 
-```
+```sql
 CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'ClaveSegura';
 GRANT ALL PRIVILEGES ON moodle.* TO 'moodleuser'@'localhost';
@@ -30,7 +30,7 @@ EXIT;
 
 ## 3. Descargar Moodle 5.1
 
-```
+```bash
 cd /var/www/
 sudo wget https://download.moodle.org/download.php/stable501/moodle-5.1.tgz
 sudo tar -xvzf moodle-5.1.tgz
@@ -39,7 +39,7 @@ sudo rm -r moodle-5.1.tgz
 
 ## 4. Crear moodledata
 
-```
+```bash
 cd /var/
 sudo mkdir moodledata
 sudo chown -R www-data:www-data moodledata
@@ -48,7 +48,7 @@ sudo chmod -R 755 moodledata
 
 ## 5. Permisos
 
-```
+```bash
 sudo chown -R www-data:www-data /var/www/moodle
 sudo chmod -R 755 /var/www/moodle
 ```
@@ -57,13 +57,13 @@ sudo chmod -R 755 /var/www/moodle
 
 Crear archivo de configuración:
 
-```
+```bash
 sudo nano /etc/apache2/sites-available/moodle.conf
 ```
 
 Contenido:
 
-```
+```text
 <VirtualHost *:80>
     ServerName localhost # 127.0.0.1
     DocumentRoot /var/www/moodle/public
@@ -77,7 +77,7 @@ Contenido:
 
 Activar:
 
-```
+```bash
 sudo a2ensite moodle.conf
 sudo a2enmod rewrite #no es necesario ejecutarlo cada vez que se crea un sitio nuevo
 sudo systemctl reload apache2
@@ -85,26 +85,26 @@ sudo systemctl reload apache2
 
 Desactivar un sitio:
 
-```
+```bash
 sudo a2dissite moodle.conf
 sudo systemctl reload apache2
 ```
 
 Ver log de errores de Apache en tiempo real
 
-```
+```bash
 sudo tail -f /var/log/apache2/error.log
 ```
 
 ## 7. Ajustes PHP
 
-```
+```bash
 sudo nano /etc/php/8.4/apache2/php.ini
 ```
 
 Cambiar:
 
-```
+```text
 max_input_vars = 5000
 max_execution_time = 300
 memory_limit = 512M
@@ -116,12 +116,10 @@ upload_max_filesize = 256M
 
 Accede a:
 
-```
+```text
 http://localhost
 ```
 
 Sigue los pasos de configuración.
-
-
 
 ## 9. Instalación completa 🎉
