@@ -55,7 +55,7 @@ sudo chmod -R 755 /var/www/moodle
 
 ## 6. Configuración de Apache
 
-Crear archivo de configuración:
+Crear archivo de configuración para moodle:
 
 ```bash
 sudo nano /etc/apache2/sites-available/moodle.conf
@@ -73,6 +73,18 @@ Contenido:
         Require all granted
     </Directory>
 </VirtualHost>
+```
+
+En caso de tener otro VirtualHost con Wordpress, añadir esta configuración en el fichero 000-default.conf
+
+```text
+Alias /moodle /var/www/moodle
+<Directory /var/www/moodle>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
 ```
 
 Activar:
