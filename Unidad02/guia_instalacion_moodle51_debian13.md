@@ -78,12 +78,21 @@ Contenido:
 En caso de tener otro VirtualHost con Wordpress, añadir esta configuración en el fichero 000-default.conf
 
 ```text
+# Moodle
 Alias /moodle /var/www/moodle
 <Directory /var/www/moodle>
     Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted
 </Directory>
+
+# WordPress en /var/www/html
+<Directory /var/www/html>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
 
 ```
 
