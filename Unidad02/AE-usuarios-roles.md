@@ -99,29 +99,21 @@ Debes entregar un documento en formato PDF o Word con:
 - Capturas o descripción de la comprobación final
 - Tabla resumen:
 
-  Usuario                   Rol asignado   Contexto   ¿Funciona correctamente?
-  ------------------------- -------------- ---------- --------------------------
-  María del Arte Flamenco   Docente        Curso X    ✔️ / ❌
-  ...                       ...            ...        ...
+ | Usuario                 | Rol asignado | Contexto | ¿Funciona correctamente? |
+|-------------------------|--------------|----------|---------------------------|
+| María del Arte Flamenco | Docente      | Curso X  | ✔️ / ❌                    |
+| ...                     | ...          | ...      | ...                       |
+
 
 ## **4. Rúbrica de evaluación**
 
-  -----------------------------------------------------------------------
-  Criterio         2 puntos           1 punto          0 puntos
-  ---------------- ------------------ ---------------- ------------------
-  Creación de      Correcta y         Algún error      Varios errores
-  usuarios         completa           menor            
+| Criterio                  | 2 puntos               | 1 punto           | 0 puntos                  |
+|---------------------------|------------------------|-------------------|---------------------------|
+| Creación de usuarios      | Correcta y completa    | Algún error menor | Varios errores            |
+| Asignación de roles       | Precisa y coherente    | Alguna duda       | Incorrecta                |
+| Rol personalizado         | Configurado correctamente | Incompleto    | Incorrecto                |
+| Verificación final        | Clara y completa       | Poco detallada    | Incorrecta o no entregada |
+| Presentación              | Clara y organizada     | Aceptable         | Desordenada               |
 
-  Asignación de    Precisa y          Alguna duda      Incorrecta
-  roles            coherente                           
-
-  Rol              Configurado        Incompleto       Incorrecto
-  personalizado    correctamente                       
-
-  Verificación     Clara y completa   Poco detallada   Incorrecta o no
-  final                                                entregada
-
-  Presentación     Clara y organizada Aceptable        Desordenada
-  -----------------------------------------------------------------------
 
 ¡Buen trabajo, administrador/a de *Er Sabel*!
